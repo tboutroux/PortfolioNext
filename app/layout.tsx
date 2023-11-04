@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
@@ -16,6 +17,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
+      <Head>
+        <link rel='icon' href='/favicon.ico' sizes='any' />
+      </Head>
       <body className="font-poppins m-0 p-0 box-border w-screen bg-white ">{children}</body>
     </html>
   )

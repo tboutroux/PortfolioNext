@@ -1,4 +1,4 @@
-import Image from "next/image";
+"use client";
 import HomePage from "../components/homePage/homeComponents";
 
 export default function Page() {
