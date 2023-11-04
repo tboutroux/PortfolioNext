@@ -16,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
-      <body className="font-poppins">{children}</body>
+      <body className="font-poppins m-0 p-0 box-border w-screen bg-white ">{children}</body>
     </html>
   )
 }
