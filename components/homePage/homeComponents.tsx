@@ -6,8 +6,11 @@ import Link from "next/link";
 import AnimatedText from "./animatedText";
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faChevronDown, faXmark } from "@fortawesome/free-solid-svg-icons";
+library.add(fab);
 config.autoAddCss = false
 
 /* NAVLINK COMPONENT */ 
@@ -20,14 +23,27 @@ const NavLink: React.FC<NavLinkProps> = ( {link, title} ) => {
 
     if (title === "Accueil") {
         return (
-            <Link href={link} className="text-white px-[15px] py-[6px] bg-gold rounded-3xl font-medium">{title}</Link>
+            <Link href={link} className="lg:text-xs text-white px-[15px] py-[6px] bg-gold rounded-3xl font-medium">{title}</Link>
         );
     }
     else {
         return (
-            <Link href={link} className="text-black font-medium hover:text-stone-700 transition-all duration-200">{title}</Link>
+            <Link href={link} className="lg:text-xs text-black font-medium hover:text-stone-700 transition-all duration-200">{title}</Link>
         );
     }
+
+}
+
+interface MobileNavLinkProps {
+    link: string,
+    title: string
+}
+
+const MobileNavLink: React.FC<NavLinkProps> = ( {link, title} ) => {
+
+    return (
+            <Link href={link} className="lg:text-xs text-white font-medium hover:text-stone-700 transition-all duration-200">{title}</Link>
+        );
 
 }
 
@@ -35,19 +51,24 @@ const NavLink: React.FC<NavLinkProps> = ( {link, title} ) => {
 
 const NavBar = () => {
 
-    document.getElementById("open-burger")?.addEventListener("click", () => {
-        document.getElementById("burger-menu")?.classList.remove("hidden");
-        document.getElementById("burger-menu")?.classList.add("flex");
-    })
+    function openBurger() {
+        const burgerMenu = document.getElementById('burger-menu');
+        burgerMenu.style.display = 'flex';
+      }
+      
+      function closeBurger() {
+        const burgerMenu = document.getElementById('burger-menu');
+        burgerMenu.style.display = 'none';
+      }
 
     return (
-        <header className="w-full h-10 px-5 py-10 lg:px-[100px] lg:py-[30px] flex justify-between items-center">
+        <header className="w-full h-10 px-5 sm:px-10 py-10 lg:px-[100px] lg:py-[30px] flex justify-between items-center">
 
             <div>
                 <span className="text-black text-2xl font-bold">Théo Boutroux</span>
             </div>
 
-            <nav className="hidden lg:flex justify-between items-center w-2/5 text-base">
+            <nav className="hidden lg:flex justify-between items-center w-2/5 lg:w-3/5 xl:w-2/5  text-base">
                 <NavLink link="/" title="Accueil" />
                 <NavLink link="/" title="Qui suis-je" />
                 <NavLink link="/" title="Compétences" />
@@ -55,14 +76,27 @@ const NavBar = () => {
                 <NavLink link="/" title="Contact" />
             </nav>
 
-            <span id="open-burger" className="lg:hidden text-2xl"><FontAwesomeIcon icon={faBars}/></span>
+            <span id="open-burger" className="lg:hidden text-2xl" onClick={() => openBurger()}><FontAwesomeIcon icon={faBars}/></span>
 
-            <div id="burger-menu" className="hidden lg:hidden w-full h-screen bg-white fixed top-0 left-0 justify-center items-center flex-col gap-5 text-2xl font-bold">
-                <NavLink link="/" title="Accueil" />
-                <NavLink link="/" title="Qui suis-je" />
-                <NavLink link="/" title="Compétences" />
-                <NavLink link="/" title="Portfolio" />
-                <NavLink link="/" title="Contact" />
+            <div id="burger-menu" className="hidden lg:hidden w-2/3 h-screen bg-black fixed top-0 right-0 justify-between py-5 items-center flex-col gap-5 text-2xl font-bold z-10">
+                
+                <div className="flex justify-end w-full px-5 sm:px-10 py-1">
+                    <FontAwesomeIcon icon={faXmark} className="text-white text-3xl" id="close-burger" onClick={() => closeBurger()}/>
+                </div>
+
+                <div className="flex flex-col justify-around items-center h-2/5">
+                    <MobileNavLink link="/" title="Accueil" />
+                    <MobileNavLink link="/" title="Qui suis-je" />
+                    <MobileNavLink link="/" title="Compétences" />
+                    <MobileNavLink link="/" title="Portfolio" />
+                    <MobileNavLink link="/" title="Contact" />
+                </div>
+                
+                <div className="flex justify-end w-full px-10 gap-5">
+                    <FontAwesomeIcon icon={["fab", "github"]} className="text-white font-2xl"/>
+                    <FontAwesomeIcon icon={["fab", "linkedin"]} className="text-white font-2xl" />
+                </div>
+            
             </div>
 
         </header>
@@ -73,13 +107,13 @@ const NavBar = () => {
 const Hero = () => {
 
     return (
-        <div className="w-4/5 h-4/5 flex justify-center items-center flex-col lg:flex-row gap-12 m-auto">
-            <div className="flex justify-center items-center lg:w-1/2 w-3/4">
+        <div className="w-full sm:w-4/5 lg:w-11/12 h-4/5 flex justify-center items-center flex-col lg:flex-row gap-12 lg:gap-10 m-auto">
+            <div className="flex justify-center items-center w-4/5 sm:w-3/5 md:w-4/5 lg:w-2/5">
                 <Image src="/assets/pictures/me.png" width={500} height={500} alt={"Photo de Théo Boutroux"} className="w-full lg:w-4/5 rounded-full border-4 border-black border-solid grayscale hover:grayscale-0"/>
             </div>
-            <div className="flex justify-center items-center flex-col w-4/5 lg:w-1/2 lg:gap-2">
-                <span className="text-4xl xl:text-6xl font-bold text-black text-center">Bienvenue sur mon Portfolio, je suis</span>
-                <span className="lg:text-left w-full text-center">
+            <div className="flex justify-center items-center flex-col w-4/5 lg:w-3/5 lg:gap-2">
+                <span className="text-3xl md:text-5xl lg:text-5xl xl:text-6xl font-bold text-black text-center lg:text-left ">Bienvenue sur mon Portfolio, je suis</span>
+                <span className="w-full text-center lg:text-left">
                     <AnimatedText />
                 </span>
             </div>
@@ -107,13 +141,13 @@ const Discover = () => {
     return (
         <div>
 
-            <div className="w-full absolute bottom-0 flex flex-col justify-center items-center z-10 mb-10 gap-3">
-                <span className="text-3xl font-bold text-black">Découvrez mon parcours</span>
-                <span className="text-3xl animate-bounce"><FontAwesomeIcon icon={faChevronDown} /></span>
+            <div className="w-full absolute bottom-0 flex flex-col justify-center items-center mb-10 sm:mb-8 gap-3">
+                <span className="text-xl md:text-3xl font-bold text-black">Découvrez mon parcours</span>
+                <span className="text-xl md:text-3xl animate-bounce"><FontAwesomeIcon icon={faChevronDown} /></span>
             </div>
 
-            <div className="w-full absolute bottom-0">
-                <Image src={waveSrc} width={500} height={500} alt={"Vague hero"} className="w-full -z-10"/>
+            <div className="w-full absolute bottom-0 -z-10">
+                <Image src={waveSrc} width={500} height={800} alt={"Vague hero"} className="w-full"/>
             </div>
         </div>
     );
