@@ -16,11 +16,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="fr">
+    <html lang="fr" className='scroll-smooth'>
       <Head>
         <link rel='icon' href='/favicon.ico' sizes='any' />
       </Head>
-      <body className="font-poppins m-0 p-0 box-border w-screen bg-white ">{children}</body>
+      <body className="font-poppins m-0 p-0 box-border w-screen bg-white overflow-x-hidden">{children}</body>
     </html>
   )
 }

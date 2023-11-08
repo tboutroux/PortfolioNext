@@ -3,6 +3,7 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+@import 'animate.css/animate.min.css';
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -15,5 +16,32 @@
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
+  }
+
+}
+
+.open-burger {
+  animation: openBurger 0.3s ease-in-out forwards;
+}
+
+.close-burger {
+  animation: closeBurger 0.3s ease-in-out forwards;
+}
+
+@keyframes openBurger {
+  from {
+    transform: translateX(100%)
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes closeBurger {
+  from {
+    transform: translateX(0)
+  }
+  to {
+    transform: translateX(100%);
   }
 }
