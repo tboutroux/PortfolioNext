@@ -39,7 +39,7 @@ interface MobileNavLinkProps {
     title: string
 }
 
-const MobileNavLink: React.FC<NavLinkProps> = ( {link, title} ) => {
+const MobileNavLink: React.FC<MobileNavLinkProps> = ( {link, title} ) => {
 
     return (
             <Link href={link} className="lg:text-xs text-white font-medium hover:text-stone-700 transition-all duration-200">{title}</Link>
@@ -80,7 +80,7 @@ const NavBar = () => {
 
             <span id="open-burger" className="lg:hidden text-2xl cursor-pointer" onClick={() => openBurger()}><FontAwesomeIcon icon={faBars}/></span>
 
-            <div id="burger-menu" className="flex lg:hidden w-2/3 h-screen bg-black fixed top-0 right-0 justify-between py-5 items-center flex-col gap-5 text-2xl font-bold z-10 translate-x-full">
+            <div id="burger-menu" className="flex lg:hidden w-2/3 h-screen bg-black fixed top-0 right-0 justify-between py-5 items-center flex-col gap-5 text-2xl font-bold translate-x-full">
                 
                 <div className="flex justify-end w-full px-5 sm:px-10 py-1">
                     <FontAwesomeIcon icon={faXmark} className="text-white text-3xl cursor-pointer" id="close-burger" onClick={() => closeBurger()}/>
@@ -111,7 +111,7 @@ const Hero = () => {
     return (
         <div className="w-full sm:w-4/5 lg:w-11/12 h-4/5 flex justify-center items-center flex-col lg:flex-row gap-12 lg:gap-10 m-auto">
             <div className="flex justify-center items-center w-4/5 sm:w-3/5 lg:w-2/5 xl:w-1/2 animate__animated animate__fadeInLeft">
-                <Image src="/assets/pictures/me.png" width={500} height={500} alt={"Photo de Théo Boutroux"} className="w-full lg:w-4/5 xl:w-3/5 rounded-full border-4 border-black border-solid grayscale hover:grayscale-0"/>
+                <Image src="/assets/pictures/me.png" width={500} height={500} alt={"Photo de Théo Boutroux"} className="w-11/12 lg:w-4/5 xl:w-3/5 rounded-full border-4 border-black border-solid grayscale hover:grayscale-0"/>
             </div>
             <div className="flex justify-center items-center flex-col w-4/5 lg:w-3/5 xl:w-1/2 lg:gap-2 animate__animated animate__fadeInRight">
                 <span className="text-3xl lg:text-5xl xl:text-6xl font-bold text-black text-center lg:text-left">Bienvenue sur mon Portfolio, je suis</span>
@@ -126,13 +126,28 @@ const Hero = () => {
 /* HERO BOTTOM COMPONENT */
 const Discover = () => {
 
-    const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+    const [screenWidth, setScreenWidth] = useState(0);
 
-    if (typeof window !== "undefined") {
-        window.addEventListener("resize", () => {
+    useEffect(() => {
+        // Vérifiez si window est défini avant d'y accéder
+        if (typeof window !== 'undefined') {
+          // Mettez à jour la largeur de l'écran lors du chargement initial
             setScreenWidth(window.innerWidth);
-        });
-    }
+
+          // Ajoutez un écouteur d'événement de redimensionnement
+            const handleResize = () => {
+                setScreenWidth(window.innerWidth);
+            };
+
+            window.addEventListener('resize', handleResize);
+
+          // Nettoyez l'écouteur d'événement lors de la suppression du composant
+            return () => {
+                window.removeEventListener('resize', handleResize);
+            };
+        }
+    }, []); // Le tableau vide signifie que cet effet n'a besoin de s'exécuter qu'une seule fois au montage
+
 
     let waveSrc = "/assets/pictures/hero-wave.svg";
 

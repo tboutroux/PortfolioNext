@@ -45,3 +45,26 @@
     transform: translateX(100%);
   }
 }
+
+/* SCROLL BAR */
+
+::-webkit-scrollbar {
+  width: 7px;
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar:hover {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--black);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.8);
+}

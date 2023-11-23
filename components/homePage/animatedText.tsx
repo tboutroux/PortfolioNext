@@ -9,7 +9,7 @@ const AnimatedText = () => {
             <TypeIt
                 options={
                     {
-                        strings: ["Développeur Web", "Étudiant", "Pâtissier", "Plombier", "Maçon" ],
+                        strings: ["Développeur Web", "Étudiant"],
                         breakLines: false,
                         loop: true,
                         waitUntilVisible: true,
