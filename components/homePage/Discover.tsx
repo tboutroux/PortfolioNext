@@ -40,18 +40,12 @@ export const Discover = () => {
     return (
         <div>
 
-            <Link href="#presentationPage">
-
-                <Link href='#presentation-page' className="w-full absolute bottom-0 flex flex-col justify-center items-center mb-10 sm:mb-8 gap-3 cursor-pointer">
-                    <span className="text-xl sm:text-2xl xl:text-3xl font-bold text-black animate-pulse">Découvrez mon parcours</span>
-                    <span className="text-xl lg:text-3xl animate-pulse"><FontAwesomeIcon icon={faChevronDown} /></span>
-                </Link>
-
+            <Link href="#presentation-page" className="w-full absolute bottom-0 flex flex-col justify-center items-center mb-10 sm:mb-8 gap-3 cursor-pointer">
+                <span className="text-md sm:text-2xl xl:text-3xl font-bold text-black animate-pulse">Découvrez mon parcours</span>
+                <span className="text-md lg:text-3xl animate-pulse"><FontAwesomeIcon icon={faChevronDown} /></span>
             </Link>
             
-            <div className="w-full absolute bottom-0 -z-10">
-                <Image src={waveSrc} width={500} height={800} alt={"Vague hero"} className="w-full"/>
-            </div>
+            <Image src={waveSrc} width={500} height={800} alt={"Vague hero"} className="w-full absolute bottom-0 -z-20"/>
         </div>
     );
 }

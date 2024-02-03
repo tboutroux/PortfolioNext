@@ -5,7 +5,7 @@ import TypeIt from 'typeit-react';
 const AnimatedText = () => {
 
     return (
-        <div className="text-3xl sm:text-5xl lg:text-5xl xl:text-6xl text-gold font-bold">
+        <div className="text-2xl sm:text-5xl lg:text-5xl xl:text-6xl text-gold font-bold">
             <TypeIt
                 options={
                     {
