@@ -16,7 +16,7 @@ interface ParcoursCardProps {
 const ParcoursCard: React.FC<ParcoursCardProps> = ({ date, entreprise, adresse, competences, missions, logo }) => {
     return (
                                 
-        <div className="w-full h-full rounded-xl bg-gray-900 py-5 xl:p-8">
+        <div className="w-full h-full rounded-xl bg-gray-900 py-5 lg:p-8">
 
             <div className="flex flex-col justify-between items-center w-full h-full gap-4">
                 <div className="flex justify-center items-center w-full text-white">
@@ -27,16 +27,16 @@ const ParcoursCard: React.FC<ParcoursCardProps> = ({ date, entreprise, adresse, 
 
                     <div className="flex flex-col justify-center items-start gap-2 md:gap-4 w-full md:w-1/2 px-8">
                         <div>
-                            <h4 className="text-white font-bold text-md md:text-xl">Dates :</h4>
-                            <span className="text-gray-500 text-xs md:text-md">{date}</span>
+                            <h4 className="text-white font-bold text-md md:text-xl xl:text-2xl">Dates :</h4>
+                            <span className="text-gray-500 text-xs md:text-md xl:text-lg">{date}</span>
                         </div>
 
                         <div>
-                            <h4 className="text-white font-bold text-md md:text-xl">Adresse :</h4>
-                            <span className="text-gray-500 text-xs md:text-md text-justify">{adresse}</span>
+                            <h4 className="text-white font-bold text-md md:text-xl xl:text-2xl">Adresse :</h4>
+                            <span className="text-gray-500 text-xs md:text-md xl:text-lg text-justify">{adresse}</span>
                         </div>
 
-                        <Image src={logo} width={100} height={50} alt="Logo de l'EPSI (Ecole prévée des sciences de l'informatique)" className="hidden"/>
+                        <Image src={logo} width={100} height={50} alt="Logo de l'EPSI (Ecole prévée des sciences de l'informatique)" className="hidden xl:block"/>
                         
                     </div>
 
@@ -44,7 +44,7 @@ const ParcoursCard: React.FC<ParcoursCardProps> = ({ date, entreprise, adresse, 
 
                     <div className="flex flex-col justify-around items-start gap-4 w-full md:w-1/2 px-8">
                         <div className="w-3/4">
-                            <h4 className="text-white font-bold text-md md:text-xl">Compétences :</h4>
+                            <h4 className="text-white font-bold text-md md:text-xl xl:text-2xl">Compétences :</h4>
                             <span className="text-gray-500 flex justify-between items-center mt-2 w-full">
 
                                 {
@@ -56,8 +56,8 @@ const ParcoursCard: React.FC<ParcoursCardProps> = ({ date, entreprise, adresse, 
                             </span>
                         </div>
                         <div>
-                            <h4 className="text-white font-bold text-md md:text-xl">Missions :</h4>
-                            <span className="text-gray-500 text-xs md:text-md text-justify">{missions}</span>
+                            <h4 className="text-white font-bold text-md md:text-xl xl:text-2xl">Missions :</h4>
+                            <span className="text-gray-500 text-xs md:text-md xl:text-lg text-justify">{missions}</span>
                         </div>
 
                     </div>
@@ -65,7 +65,7 @@ const ParcoursCard: React.FC<ParcoursCardProps> = ({ date, entreprise, adresse, 
                 </div>
 
                 <div className="w-full flex justify-center items-center">
-                    <Link href="#portfolio" className="bg-white px-8 py-2 lg:py-3 rounded-xl shadow-2xl hover:bg-gray-100 hover:tracking-wide hover:text-md transition-all duration-300 w-3/4 lg:w-full text-center">
+                    <Link href="#portfolio" className="bg-white px-8 py-2 xl:py-3 rounded-xl shadow-2xl hover:bg-gray-100 hover:tracking-wide hover:text-md transition-all duration-300 w-3/4 lg:w-full text-center">
                         <span className="text-sm lg:text-lg">Voir mes projets</span>
                     </Link>
                 </div>

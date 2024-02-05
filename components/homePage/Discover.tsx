@@ -40,7 +40,7 @@ export const Discover = () => {
     return (
         <div>
 
-            <Link href="#presentation-page" className="w-full absolute bottom-0 flex flex-col justify-center items-center mb-10 sm:mb-8 gap-3 cursor-pointer">
+            <Link href="#presentation-page" className="w-full absolute bottom-0 flex flex-col justify-center items-center p-8 gap-3 cursor-pointer">
                 <span className="text-md sm:text-2xl xl:text-3xl font-bold text-black animate-pulse">Découvrez mon parcours</span>
                 <span className="text-md lg:text-3xl animate-pulse"><FontAwesomeIcon icon={faChevronDown} /></span>
             </Link>
