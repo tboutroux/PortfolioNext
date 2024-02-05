@@ -40,7 +40,7 @@ const PresentationPage = () => {
     }
 
     return (
-        <div className='bg-gold w-full xl:mb-80'>
+        <div className='bg-gold w-full mb-20 sm:mb-40 xl:mb-80'>
             <div className="flex justify-center items-center">
                 <h1 id='presentation-page' className="m-10 text-3xl sm:text-4xl xl:text-6xl lg:text-5xl font-semibold xl:m-10 lg:m-8">Qui suis-je ?</h1>
             </div>
