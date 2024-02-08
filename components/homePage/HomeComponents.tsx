@@ -17,9 +17,11 @@ import { Discover } from "./Discover";
 const HomePage = () => {
     return (
         <div className="w-screen h-screen overflow-x-hidden" id="home">
-            <NavBar />
-            <Hero />
-            <Discover />
+            <div className="h-full">
+                <NavBar />
+                <Hero />
+                <Discover />
+            </div>
         </div>
     );
 }

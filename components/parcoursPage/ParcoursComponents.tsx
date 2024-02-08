@@ -27,7 +27,7 @@ const ParcoursPage = () => {
         },
         {
             id: 'parcours-epsi',
-            date: '2022-',
+            date: 'En Cours',
             entreprise: 'EPSI Nantes',
             adresse: '16 Boulevard Général De Gaulle, 44300 Nantes',
             competences: [faHtml5, faCss3Alt, faJs, faPhp, faPython],
@@ -100,7 +100,7 @@ const ParcoursPage = () => {
 
                     <ParcoursItem id="parcours-tibco" date='2024' entreprise='TIBCO Services' poste='Stage' />
                     <ParcoursItem id="parcours-omr" date='2023' entreprise='OMR Infogérance' poste='Stage' />
-                    <ParcoursItem id="parcours-epsi" date='2022-' entreprise='EPSI Nantes' poste='Études' />    
+                    <ParcoursItem id="parcours-epsi" date='2022' entreprise='EPSI Nantes' poste='Études' />    
 
                 </div>
 
