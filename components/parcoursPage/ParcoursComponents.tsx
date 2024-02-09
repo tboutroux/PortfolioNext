@@ -88,10 +88,10 @@ const ParcoursPage = () => {
     }, [])
 
     return (
-        <div className='w-full h-screen bg-white mb-60'>
+        <div className='w-full bg-white mb-20 xl:mb-40'>
             
             <div className="flex justify-center items-center">
-                <h1 id="mon-parcours" className="m-10 text-3xl sm:text-4xl xl:text-6xl lg:text-5xl font-semibold xl:m-10 lg:m-8">Mon Parcours</h1>
+                <h1 id="mon-parcours" className="m-10 text-3xl sm:text-4xl xl:text-6xl lg:text-5xl font-semibold xl:m-10 lg:m-10">Mon Parcours</h1>
             </div>
 
             <div className="flex flex-col xl:flex-row justify-center items-center gap-8 xl:justify-between xl:align-center w-3/4 m-auto xl:mt-10 xl:h-1/2">
@@ -104,10 +104,7 @@ const ParcoursPage = () => {
 
                 </div>
 
-                <div id="parcours-card-container" className="flex flex-1 justify-center items-center w-full xl:w-2/3 h-full">
-                    
-                    
-                </div>
+                <div id="parcours-card-container" className="flex flex-1 justify-center items-center w-full xl:w-2/3 h-full"></div>
 
             </div>
 
