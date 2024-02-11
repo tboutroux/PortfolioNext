@@ -97,7 +97,7 @@ const NavBar = () => {
                 <NavLink link="/" title="Contact" />
             </nav>
 
-            <span id="open-burger" className="lg:hidden text-2xl cursor-pointer" onClick={() => openBurger()}><FontAwesomeIcon icon={faBars}/></span>
+            <span id="open-burger" className="lg:hidden text-lg lg:text-2xl cursor-pointer w-8 h-8 flex justify-center items-center bg-gray-200 lg:bg-transparent rounded-full lg:bg-none lg:rounded-none lg:px-0 lg:py-0" onClick={() => openBurger()}><FontAwesomeIcon icon={faBars}/></span>
 
             <div id="burger-menu" className="flex lg:hidden w-full lg:w-1/5 z-20 lg:z-20 h-screen bg-black opacity-90  fixed top-0 right-0 justify-between py-5 items-center flex-col gap-5 text-2xl font-bold translate-x-full">
                 
