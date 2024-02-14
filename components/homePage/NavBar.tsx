@@ -101,7 +101,7 @@ const NavBar = () => {
 
             <div id="burger-menu" className="flex lg:hidden w-full lg:w-1/5 z-20 lg:z-20 h-screen bg-black opacity-90  fixed top-0 right-0 justify-between py-5 items-center flex-col gap-5 text-2xl font-bold translate-x-full">
                 
-                <div className="flex justify-end w-full px-9 py-1">
+                <div className="flex justify-end w-full px-6 sm:px-11 py-1">
                     <FontAwesomeIcon icon={faXmark} className="text-white text-3xl cursor-pointer hover:text-gold transition-all duration-300" id="close-burger" onClick={() => closeBurger()}/>
                 </div>
 

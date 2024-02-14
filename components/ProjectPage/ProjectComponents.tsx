@@ -36,7 +36,7 @@ const ProjectPage = () => {
         <div className='w-full'>
             <Image src={waveSrc} width={500} height={800} alt={"Vague hero"} className="w-full relative"/>
             <div className='bg-gold'>
-                <div className="flex justify-center items-center w-3/4 flex-col m-auto">
+                <div className="flex justify-center items-center w-3/4 flex-col m-auto gap-20">
                     <h1 id="projets" className="text-3xl sm:text-4xl xl:text-6xl lg:text-5xl font-semibold ">Mes Projets</h1>
                     <Carrousel />
                 </div>

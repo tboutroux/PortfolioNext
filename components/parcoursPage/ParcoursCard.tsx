@@ -65,7 +65,7 @@ const ParcoursCard: React.FC<ParcoursCardProps> = ({ date, entreprise, adresse, 
                 </div>
 
                 <div className="w-full flex justify-center items-center">
-                    <Link href="#portfolio" className="bg-white px-8 py-2 xl:py-3 rounded-xl shadow-2xl hover:bg-gray-100 hover:tracking-wide hover:text-md transition-all duration-300 w-3/4 lg:w-full text-center">
+                    <Link href="#projets" className="bg-white px-8 py-2 xl:py-3 rounded-xl shadow-2xl hover:bg-gray-100 hover:tracking-wide hover:text-md transition-all duration-300 w-3/4 lg:w-full text-center">
                         <span className="text-sm lg:text-lg">Voir mes projets</span>
                     </Link>
                 </div>

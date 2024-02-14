@@ -1,32 +1,25 @@
-// pages/index.js
 import { SetStateAction, useState } from 'react';
 import Link from 'next/link';
+import { MdOutlineNavigateBefore } from "react-icons/md";
+import { useSwipeable } from 'react-swipeable';
+import Image from 'next/image';
 
 const images = [
     {
-        src: 'https://via.placeholder.com/600x400?text=Image+1',
-        caption: 'Image 1',
+        src: '/assets/pictures/projects/main-courante/new-index.png',
+        caption: 'Main Courante',
         projectId: 1,
     },
     {
-        src: 'https://via.placeholder.com/600x400?text=Image+2',
-        caption: 'Image 2',
-        projectId: 2,
-    },
-    {
-        src: 'https://via.placeholder.com/600x400?text=Image+3',
-        caption: 'Image 3',
-        projectId: 3,
-    },
-    {
-        src: 'https://via.placeholder.com/600x400?text=Image+4',
-        caption: 'Image 4',
-        projectId: 4,
+        src: '/assets/pictures/projects/main-courante/new-index.png',
+        caption: 'Main Courante',
+        projectId: 1,
     },
 ];
 
-export default function Home() {
+const Carrousel = () => {
     const [currentPage, setCurrentPage] = useState(0);
+    const [hoveredIndex, setHoveredIndex] = useState(-1); // Index de l'image survolée, initialisé à -1 pour indiquer aucun survol
 
     const nextPage = () => {
         setCurrentPage((prevPage) => (prevPage === images.length - 1 ? 0 : prevPage + 1));
@@ -40,38 +33,56 @@ export default function Home() {
         setCurrentPage(pageIndex);
     };
 
+    const handleMouseEnter = (index: number) => {
+        setHoveredIndex(index); // Lorsque la souris entre dans l'image, mettez à jour l'index de l'image survolée
+    };
+
+    const handleMouseLeave = () => {
+        setHoveredIndex(-1); // Lorsque la souris quitte l'image, réinitialisez l'index de l'image survolée à -1
+    };
+
+    const handlers = useSwipeable({
+        onSwipedLeft: () => nextPage(),
+        onSwipedRight: () => prevPage(),
+    });
+
     return (
-        <div className="flex justify-center items-center h-screen">
-            <div className="relative w-full max-w-3xl">
-                <div className="overflow-hidden relative">
+        <div className="flex justify-center items-center">
+            <div className="relative w-full max-w-3xl" {...handlers}>
+                <div className="overflow-hidden relative rounded-xl">
                     <ul className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${currentPage * 100}%)` }}>
                         {images.map((image, index) => (
-                        <li key={index} className="w-full flex-shrink-0 relative">
-                            <img src={image.src} alt={image.caption} className="w-full" />
-                            <div className="absolute inset-0 flex justify-center items-center">
-                                <div className="absolute bottom-0 left-0 right-0 bg-gray-800 bg-opacity-50 h-1/4 flex justify-center items-center text-white p-2">
-                                    {image.caption}
-                                    <Link href={`/projects?id=${index}`}>
-                                        <span className="ml-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded">View Project</span>
-                                    </Link>
+                            <li key={index} className="w-full flex-shrink-0 relative">
+                                <Image src={image.src} alt={image.caption} width={800} height={450} className={`w-full duration-500 carrousel-img transform transition-transform ${hoveredIndex === index ? 'scale-125' : ''}`} key={index} />
+                                <div className="absolute inset-0 flex justify-center items-center">
+                                    <div className="absolute bottom-0 left-0 right-0 bg-gray-950 bg-opacity-80 h-full flex justify-center items-center flex-col gap-3 text-white p-2">
+                                        <span className="text-3xl font-semibold">{image.caption}</span>
+                                        <Link href={`/projects?id=${index}`}>
+                                            <span className="bg-black hover:opacity-80 text-white font-semibold duration-150 ease-in py-1 px-3 rounded transition-opacity caption-btn" key={index} onMouseEnter={() => handleMouseEnter(index)} onMouseLeave={handleMouseLeave} >Voir le Projet</span>
+                                        </Link>
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
+                            </li>
                         ))}
                     </ul>
-                    <div className="flex justify-center mt-4">
-                        {images.map((_, index) => (
-                            <div key={index} className={`w-4 h-4 mx-1 rounded-full ${index === currentPage ? 'bg-blue-500 cursor-pointer' : 'bg-gray-300 cursor-pointer'}`} onClick={() => goToPage(index)}></div>
-                        ))}
-                    </div>
                 </div>
-                    <button onClick={prevPage} className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white px-3 py-1 rounded">
-                        Prev
-                    </button>
-                    <button onClick={nextPage} className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white px-3 py-1 rounded">
-                        Next
-                    </button>
+                <button onClick={prevPage} className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-black hover:bg-gray-800 duration-200 ease-in bg-opacity-50 text-white font-semibold text-xl px-3 py-1 rounded">
+                    <MdOutlineNavigateBefore />
+                </button>
+                <button onClick={nextPage} className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-black hover:bg-gray-800 duration-200 ease-in bg-opacity-50 text-white font-semibold text-xl px-3 py-1 rounded">
+                    <MdOutlineNavigateBefore className="transform rotate-180" />
+                </button>
+
+                <div className="flex justify-center mt-4">
+                    {images.map((_, index) => (
+                        <div key={index} className={`w-4 h-4 mx-1 rounded-full ${index === currentPage ? 'bg-black cursor-pointer' : 'bg-gray-200 cursor-pointer'}`} onClick={() => goToPage(index)}></div>
+                    ))}
+                </div>
+
             </div>
+            
         </div>
     );
 }
+
+export default Carrousel;
