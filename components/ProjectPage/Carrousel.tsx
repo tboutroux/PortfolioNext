@@ -53,10 +53,10 @@ const Carrousel = () => {
                     <ul className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${currentPage * 100}%)` }}>
                         {images.map((image, index) => (
                             <li key={index} className="w-full flex-shrink-0 relative">
-                                <Image src={image.src} alt={image.caption} width={800} height={450} className={`w-full duration-500 carrousel-img transform transition-transform ${hoveredIndex === index ? 'scale-125' : ''}`} key={index} />
+                                <Image src={image.src} alt={image.caption} width={800} height={450} className={`object-cover aspect-square md:aspect-video w-full duration-500 carrousel-img transform transition-transform ${hoveredIndex === index ? 'scale-125' : ''}`} key={index} />
                                 <div className="absolute inset-0 flex justify-center items-center">
-                                    <div className="absolute bottom-0 left-0 right-0 bg-gray-950 bg-opacity-80 h-full flex justify-center items-center flex-col gap-3 text-white p-2">
-                                        <span className="text-3xl font-semibold">{image.caption}</span>
+                                    <div className="absolute bottom-0 left-0 right-0 bg-gray-950 bg-opacity-80 h-full flex justify-center items-center flex-col gap-6 text-white p-2">
+                                        <span className="text-xl md:text-2xl font-semibold">{image.caption}</span>
                                         <Link href={`/projects?id=${index}`}>
                                             <span className="bg-black hover:opacity-80 text-white font-semibold duration-150 ease-in py-1 px-3 rounded transition-opacity caption-btn" key={index} onMouseEnter={() => handleMouseEnter(index)} onMouseLeave={handleMouseLeave} >Voir le Projet</span>
                                         </Link>
@@ -66,14 +66,14 @@ const Carrousel = () => {
                         ))}
                     </ul>
                 </div>
-                <button onClick={prevPage} className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-black hover:bg-gray-800 duration-200 ease-in bg-opacity-50 text-white font-semibold text-xl px-3 py-1 rounded">
+                <button onClick={prevPage} className="absolute md:top-1/2 left-0 bottom-0 md:bottom-auto md:left-4 transform md:-translate-y-1/2 bg-black hover:bg-gray-800 duration-200 ease-in bg-opacity-50 text-white font-semibold text-xl px-2 py-2 rounded-full">
                     <MdOutlineNavigateBefore />
                 </button>
-                <button onClick={nextPage} className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-black hover:bg-gray-800 duration-200 ease-in bg-opacity-50 text-white font-semibold text-xl px-3 py-1 rounded">
+                <button onClick={nextPage} className="absolute md:top-1/2 right-0 bottom-0 md:bottom-auto md:right-4 transform md:-translate-y-1/2 bg-black hover:bg-gray-800 duration-200 ease-in bg-opacity-50 text-white font-semibold text-xl px-2 py-2 rounded-full">
                     <MdOutlineNavigateBefore className="transform rotate-180" />
                 </button>
 
-                <div className="flex justify-center mt-4">
+                <div className="flex justify-center mt-4 mb-4">
                     {images.map((_, index) => (
                         <div key={index} className={`w-4 h-4 mx-1 rounded-full ${index === currentPage ? 'bg-black cursor-pointer' : 'bg-gray-200 cursor-pointer'}`} onClick={() => goToPage(index)}></div>
                     ))}

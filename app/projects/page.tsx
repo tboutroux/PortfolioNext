@@ -1,5 +1,4 @@
 'use client'
-import { useSearchParams } from 'next/navigation'
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
 

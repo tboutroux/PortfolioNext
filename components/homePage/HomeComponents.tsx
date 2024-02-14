@@ -17,7 +17,7 @@ import { Discover } from "./Discover";
 const HomePage = () => {
     return (
         <div className="w-screen h-screen overflow-x-hidden" id="home">
-            <div className="h-full">
+            <div className="h-full flex justify-between items-center flex-col">
                 <NavBar />
                 <Hero />
                 <Discover />

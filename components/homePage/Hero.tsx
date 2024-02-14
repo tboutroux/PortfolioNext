@@ -6,7 +6,7 @@ import AnimatedText from './AnimatedText';
 const Hero = () => {
 
     return (
-        <div className="w-full sm:w-7/12 md:w-9/12 lg:w-11/12 flex justify-center items-center h-2/3 sm:h-4/5 flex-col lg:flex-row gap-12 lg:gap-10 m-auto">
+        <div className="w-full sm:w-7/12 md:w-9/12 lg:w-11/12 flex justify-start items-center h-2/3 sm:h-4/5 flex-col lg:flex-row gap-12 lg:gap-10 pb-8">
             <div className="flex justify-center items-center w-4/5 sm:w-full lg:w-2/5 xl:w-1/2">
                 <Image src="/assets/pictures/me.png" width={500} height={500} priority={true} alt={"Photo de Théo Boutroux"} className="w-11/12 lg:w-4/5 xl:w-3/5 rounded-full border-4 border-black border-solid "/>
             </div>
