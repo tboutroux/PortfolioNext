@@ -41,7 +41,7 @@ const ProjectPage = () => {
                     <Carrousel />
                 </div>
             </div>
-            <Image src={waveSrc} width={500} height={800} alt={"Vague hero"} className="w-full rotate-180 absolute"/>
+            <Image src={waveSrc} width={500} height={800} alt={"Vague hero"} className="w-full rotate-180 relative"/>
         </div>
     );
 };

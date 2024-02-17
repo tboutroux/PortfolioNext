@@ -94,7 +94,7 @@ const NavBar = () => {
                 <NavLink link="#mon-parcours" title="Parcours" />
                 <NavLink link="#competences" title="Compétences" />
                 <NavLink link="#projets" title="Portfolio" />
-                <NavLink link="/" title="Contact" />
+                <NavLink link="#contact" title="Contact" />
             </nav>
 
             <span id="open-burger" className="lg:hidden text-lg lg:text-2xl cursor-pointer w-8 h-8 flex justify-center items-center bg-gray-200 lg:bg-transparent rounded-full lg:bg-none lg:rounded-none lg:px-0 lg:py-0" onClick={() => openBurger()}><FontAwesomeIcon icon={faBars}/></span>
@@ -111,7 +111,7 @@ const NavBar = () => {
                     <MobileNavLink link="#mon-parcours" title="Parcours" />
                     <MobileNavLink link="#competences" title="Compétences" />
                     <MobileNavLink link="#projets" title="Portfolio" />
-                    <MobileNavLink link="/" title="Contact" />
+                    <MobileNavLink link="#contact" title="Contact" />
                 </div>
                 
                 <div className="flex justify-end w-full px-10 gap-5">

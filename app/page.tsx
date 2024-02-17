@@ -6,6 +6,7 @@ import HomePage from '../components/homePage/HomeComponents';
 import PresentationPage from '../components/presentationPage/PresentationComponents';
 import SkillsPage from '@/components/skillsPage/skillsComponents';
 import ProjectPage from '@/components/projectPage/ProjectComponents';
+import ContactPage from '@/components/contactPage/ContactComponents';
 
 export default function Page() {
     const [isLoading, setIsLoading] = useState(true);
@@ -31,6 +32,7 @@ export default function Page() {
                     <ParcoursPage />
                     <SkillsPage />
                     <ProjectPage />
+                    <ContactPage />
                 </>
             )}
         </div>
