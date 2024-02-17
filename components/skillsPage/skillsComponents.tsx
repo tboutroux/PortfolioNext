@@ -27,7 +27,7 @@ const SkillsPage = () => {
     }, []);
 
     return (
-        <div className="w-full bg-white mb-20 xl:mb-30 relative">
+        <div className="w-full bg-white mb-10 relative">
             <div className="flex flex-col justify-center items-center">
                 <h1 ref={competenceRef} id="competences" className="m-10 text-3xl sm:text-4xl xl:text-6xl lg:text-5xl font-semibold xl:m-10 lg:m-10">Mes Compétences</h1>
 
