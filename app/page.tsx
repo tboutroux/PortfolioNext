@@ -7,6 +7,7 @@ import PresentationPage from '../components/presentationPage/PresentationCompone
 import SkillsPage from '@/components/skillsPage/skillsComponents';
 import ProjectPage from '@/components/projectPage/ProjectComponents';
 import ContactPage from '@/components/contactPage/ContactComponents';
+import Footer from '@/components/footer';
 
 export default function Page() {
     const [isLoading, setIsLoading] = useState(true);
@@ -33,6 +34,7 @@ export default function Page() {
                     <SkillsPage />
                     <ProjectPage />
                     <ContactPage />
+                    <Footer />
                 </>
             )}
         </div>
