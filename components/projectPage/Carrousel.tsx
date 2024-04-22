@@ -11,10 +11,15 @@ const images = [
         projectId: 1,
     },
     {
-        src: '/assets/pictures/projects/main-courante/new-index.png',
-        caption: 'Main Courante',
-        projectId: 1,
+        src: '/assets/pictures/projects/console-sentinel-one/index.png',
+        caption: 'Console SentinelOne',
+        projectId: 2,
     },
+    {
+        src: '/assets/pictures/projects/retarrosoir/account-page.png',
+        caption: 'Retarrosoir',
+        projectId: 3,
+    }
 ];
 
 const Carrousel = () => {
