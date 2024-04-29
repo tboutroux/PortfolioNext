@@ -6,6 +6,7 @@ import HomePage from '../components/homePage/HomeComponents';
 import PresentationPage from '../components/presentationPage/PresentationComponents';
 import SkillsPage from '@/components/skillsPage/skillsComponents';
 import ProjectPage from '@/components/projectPage/ProjectComponents';
+import DocumentPage from '@/components/documentPage/DocumentComponents';
 import ContactPage from '@/components/contactPage/ContactComponents';
 import Footer from '@/components/footer';
 
@@ -33,6 +34,7 @@ export default function Page() {
                     <ParcoursPage />
                     <SkillsPage />
                     <ProjectPage />
+                    <DocumentPage />
                     <ContactPage />
                     <Footer />
                 </>

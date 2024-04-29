@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { BiLogoTypescript, BiLogoJavascript, BiLogoReact, BiLogoTailwindCss, BiLogoJquery, BiLogoVuejs } from "react-icons/bi";
-import { FaHtml5, FaCss3Alt, FaBootstrap, FaPhp, FaPython } from "react-icons/fa";
+import { FaHtml5, FaCss3Alt, FaBootstrap, FaPhp, FaPython, FaSymfony } from "react-icons/fa";
 import { DiMysql } from "react-icons/di";
 import { TbBrandNextjs } from "react-icons/tb";
 import SkillItem from "./SkilItem";
@@ -60,6 +60,7 @@ const SkillsPage = () => {
                                 <SkillItem technology="Next.js" icon={<TbBrandNextjs />} width={50}/>
                                 <SkillItem technology="jQuery" icon={<BiLogoJquery />} width={60}/>
                                 <SkillItem technology="Vue.js" icon={<BiLogoVuejs />} width={30}/>
+                                <SkillItem technology="Symfony" icon={<FaSymfony />} width={50}/>
                                 
                             </div>
                         </div>

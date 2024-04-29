@@ -20,8 +20,10 @@ export default function Project() {
         description: string;
         documents: {
             rapportDeStage: string;
+            annexe9: string;
         };
         heroImg: string;
+        buttonText: string;
     };
     
     const [projectId, setProjectId] = useState<number>(0);
@@ -53,8 +55,10 @@ export default function Project() {
             description: "La main courante est une application web de gestion d'entrées et de sorties au sein d'un service cybersécurité certifié ISO27001. Elle permet de créer des autorisations d'accès, de planifier des visites clients, et de gérer les engagements de confidentialité. Elle permet également de loguer les entrées et sorties au sein du service.",
             documents: {
                 rapportDeStage: '/assets/pictures/projects/main-courante/rapport-de-stage-seconde-annee-theo-boutroux.pdf',
+                annexe9: '/assets/pictures/projects/main-courante/2024-annexe9-theo-boutroux.pdf'
             },
             heroImg: '/assets/pictures/projects/main-courante/new-index.png',
+            buttonText: 'Rapport de stage'
         },
         1: {
             id_projet: 2,
@@ -66,8 +70,10 @@ export default function Project() {
             description: "La console SentinelOne est une application web de gestion des agents SentinelOne. Elle permet de gérer les agents, de les déployer, de les configurer, de les mettre à jour, et de les désinstaller. Elle permet également de gérer les incidents, de les analyser, et de les résoudre.",
             documents: {
                 rapportDeStage: '/assets/pictures/projects/console-sentinel-one/rapport-de-stage-premiere-annee-theo-boutroux.pdf',
+                annexe9: '/assets/pictures/projects/console-sentinel-one/2023-annexe9-theo-boutroux.pdf'
             },
             heroImg: '/assets/pictures/projects/console-sentinel-one/index.png',
+            buttonText: 'Rapport de stage'
         },
         2: {
             id_projet: 3,
@@ -79,8 +85,10 @@ export default function Project() {
             description: "Retarrosoir est un réseau social de partage de retards. Il permet à ses utilisateurs de partager leurs retards, de les justifier, et de les commenter. Il permet également de suivre les retards de ses amis, de les commenter, et de les liker.",
             documents: {
                 rapportDeStage: '',
+                annexe9: ''
             },
             heroImg: '/assets/pictures/projects/retarrosoir/account-page.png',
+            buttonText: "Documentation"
         }
     }
 
@@ -110,12 +118,23 @@ export default function Project() {
                         <div className="w-full lg:w-1/2 flex flex-col items-start justify-between gap-4 h-full">
                             <p className='text-justify text-sm md:text-base xl:text-lg'>{projectsObject[projectId].description}</p>
 
-                            <div className='w-full flex justify-center items-center gap-5'>
-                                <Link href={projectsObject[projectId].documents.rapportDeStage} download target='_blank' className='w-full'>
+                            <div className='w-full flex flex-col lg:flex-row justify-center items-center gap-5'>
+                                <Link href={projectsObject[projectId].documents.rapportDeStage} download target='_blank' className='w-full lg:w-1/2'>
                                     <button className="flex justify-center items-center w-full shadow-sm gap-5 bg-gray-900 text-white px-5 py-4 xl:px-10 xl:py-3 lg:px-8 lg:py-2 rounded-lg font-medium hover:bg-gray-800 hover:text-white transition-all duration-200 xl:shadow-xl">
-                                        <h1 className='text-sm lg:text-sm'>Télécharger le rapport de stage</h1>
+
+                                        <h1 className='text-sm lg:text-sm'>{projectsObject[projectId].buttonText}</h1>
                                     </button>
                                 </Link>
+
+                                { projectsObject[projectId].documents.rapportDeStage === '' ? ( <></> ) : ( 
+                                    <Link href={projectsObject[projectId].documents.annexe9} download target='_blank' className='w-full lg:w-1/2'>
+                                        <button className="flex justify-center items-center w-full shadow-sm gap-5 bg-gray-900 text-white px-5 py-4 xl:px-10 xl:py-3 lg:px-8 lg:py-2 rounded-lg font-medium hover:bg-gray-800 hover:text-white transition-all duration-200 xl:shadow-xl">
+
+                                            <h1 className='text-sm lg:text-sm'>Annexe 9</h1>
+                                        </button>
+                                    </Link>
+                                )}
+
                             </div>
 
                         </div>
