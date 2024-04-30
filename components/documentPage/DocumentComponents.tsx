@@ -24,13 +24,13 @@ const DocumentComponent = () => {
                     </div>
 
                     <div className='flex flex-col w-full lg:w-1/2 gap-4'>
-                        <Link href='/' download target='_blank' className='w-full'>
+                        <Link href='/assets/file/controle-de-conformite-1.pdf' download target='_blank' className='w-full'>
                             <button className="flex justify-center items-center w-full shadow-sm gap-5 bg-gray-900 text-white px-5 py-4 xl:px-10 xl:py-3 lg:px-8 lg:py-2 rounded-lg font-medium hover:bg-gray-800 hover:text-white transition-all duration-200 xl:shadow-xl">
                                 <h1 className='text-sm lg:text-sm'>Contrôle de conformité 1</h1>
                             </button>
                         </Link>
 
-                        <Link href='/' download target='_blank' className='w-full'>
+                        <Link href='/assets/file/controle-de-conformite-2.pdf' download target='_blank' className='w-full'>
                             <button className="flex justify-center items-center w-full shadow-sm gap-5 bg-gray-900 text-white px-5 py-4 xl:px-10 xl:py-3 lg:px-8 lg:py-2 rounded-lg font-medium hover:bg-gray-800 hover:text-white transition-all duration-200 xl:shadow-xl">
                                 <h1 className='text-sm lg:text-sm'>Contrôle de conformité 2</h1>
                             </button>

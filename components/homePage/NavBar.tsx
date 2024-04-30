@@ -94,6 +94,7 @@ const NavBar = () => {
                 <NavLink link="#mon-parcours" title="Parcours" />
                 <NavLink link="#competences" title="Compétences" />
                 <NavLink link="#projets" title="Portfolio" />
+                <NavLink link="#documents-bts" title="Documents" />
                 <NavLink link="#contact" title="Contact" />
             </nav>
 
@@ -111,6 +112,7 @@ const NavBar = () => {
                     <MobileNavLink link="#mon-parcours" title="Parcours" />
                     <MobileNavLink link="#competences" title="Compétences" />
                     <MobileNavLink link="#projets" title="Portfolio" />
+                    <MobileNavLink link="#documents-bts" title="Documents" />
                     <MobileNavLink link="#contact" title="Contact" />
                 </div>
                 

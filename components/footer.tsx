@@ -31,6 +31,8 @@ const Footer = () => {
                         <MenuItem text='Projets' href='/#presentation-page'/>
                         <MenuItem text='Parcours' href='/#mon-parcours'/>
                         <MenuItem text='Compétences' href='/#competences'/>
+                        <MenuItem text='Portfolio' href='/#projets'/>
+                        <MenuItem text='Documents' href='/#documents-bts'/>
                         <MenuItem text='Contact' href='/#contact'/>
                     </div>
                     <div className='flex flex-col items-center lg:items-start w-full'>
