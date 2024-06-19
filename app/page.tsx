@@ -34,7 +34,6 @@ export default function Page() {
                     <ParcoursPage />
                     <SkillsPage />
                     <ProjectPage />
-                    <DocumentPage />
                     <ContactPage />
                     <Footer />
                 </>
